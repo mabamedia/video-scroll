@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #000;
+  color: #fff;
+  font-synthesis: none;
+  overscroll-behavior: none;
+  scroll-behavior: smooth;
+}
+
+.video-container {
+  filter: saturate(2);
+  height: 100vh;
+  position: fixed;
+  width: 100vw;
+  z-index: -1;
+}
+
+.video-container:after {
+  mix-blend-mode:multiply;
+  content: '';
+  animation: animateGrain 8s steps(10) infinite;
+  background: url('/noise_texture.png');
+  height: 200%;
+  left: 0;
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  width: 200%;
+  z-index: 2;
+}
+
+.gradient-overlay {
+  background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@keyframes animateGrain {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+
+  10% {
+    transform: translate(-5%, -10%);
+  }
+
+  20% {
+    transform: translate(-15%, -20%);
+  }
+
+  30% {
+    transform: translate(-5%, -10%);
+  }
+
+  40% {
+    transform: translate(-15%, -20%);
+  }
+
+  50% {
+    transform: translate(-5%, -10%);
+  }
+
+  60% {
+    transform: translate(-15%, -20%);
+  }
+
+  70% {
+    transform: translate(-5%, -10%);
+  }
+
+  80% {
+    transform: translate(-15%, -20%);
+  }
+
+  90% {
+    transform: translate(-5%, -10%);
+  }
+
+  100% {
+    transform: translate(-15%, -20%);
+  }
+}
